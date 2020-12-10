@@ -13,7 +13,8 @@ deb http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial main
 EOF
 apt-get update
 apt-get -y upgrade
-apt install -y make gcc build-essential libgtk-3-dev wget git
+
+apt install -y make gcc build-essential libgtk-3-dev wget git vim locales
 apt install -y --allow-unauthenticated python3.8-dev python3.8-distutils python3-pip openjdk-8-jdk-headless libmysqlclient-dev libnotify-dev libsdl2-dev
 
 apt-get install -y freeglut3 freeglut3-dev libgl1-mesa-dev libglu1-mesa-dev libgstreamer-plugins-base1.0-dev libgtk-3-dev libgtk2.0-dev libjpeg-dev libnotify-dev libsdl2-dev libsm-dev libtiff-dev libwebkitgtk-3.0-dev libwebkitgtk-dev libxtst-dev
@@ -21,7 +22,13 @@ apt-get install -y freeglut3 freeglut3-dev libgl1-mesa-dev libglu1-mesa-dev libg
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$PATH:/home/ubuntu/.local/bin
 
+echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+locale-gen en_US.UTF-8
+
 apt remove -y python3-pip
 python3.8 -m easy_install pip
-python3.8 -m pip install numpy
-python3.8 -m pip install wxpython
+python3.8 -m pip install numpy==1.19.3
+python3.8 -m pip install wxpython==4.1.0
+python3.8 -m pip install cellprofiler
