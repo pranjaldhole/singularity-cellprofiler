@@ -1,3 +1,6 @@
 # Singularity images
 *.sif
 
+# Sandbox test folders
+sandbox/
+
