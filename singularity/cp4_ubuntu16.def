@@ -32,3 +32,8 @@ python3.8 -m easy_install pip
 python3.8 -m pip install numpy==1.19.3
 python3.8 -m pip install wxpython==4.1.0
 python3.8 -m pip install cellprofiler
+
+%labels
+Author dhole.pranjal@gmail.com
+Version v0.0.1
+Info Ubuntu 16.04 with CellProfiler4 preinstalled.
