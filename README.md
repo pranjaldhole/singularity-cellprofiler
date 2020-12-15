@@ -1,4 +1,4 @@
-# cluster-cellprofiler
+# Singularity-Images
 
 Singularity-based setup of cellprofiler to compute image data on compute servers.
 
