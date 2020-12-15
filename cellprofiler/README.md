@@ -73,7 +73,7 @@ mkdir libexec bin
 singularity pull --arch amd64 libexec/cellprofiler4.sif library://pranjaldhole/cv/cellprofiler4:cellprofiler
 ```
 
-+ Create an executable and make it executable:
++ Create an executable and make it executable and put it in the same folder as `.sif` file:
 ```
 cat >libexec/cellprofiler.sh<<"EOF"
 #!/bin/bash
