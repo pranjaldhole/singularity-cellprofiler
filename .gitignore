@@ -4,3 +4,5 @@
 # Sandbox test folders
 sandbox/
 
+# Auxiliary files and directories
+.vscode/

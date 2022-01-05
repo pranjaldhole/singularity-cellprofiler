@@ -1,7 +1,7 @@
 # Singularity-Images
 
 Singularity-based setup of cellprofiler to compute image data on compute servers.
-
+These instructions are derived with the reference from [singularity-tutorials](https://github.com/Singularity-tutorial/Singularity-tutorial.github.io) by David Godlove and [CellProfiler-Wiki](https://github.com/CellProfiler/CellProfiler/wiki).
 
 ## Contents
 

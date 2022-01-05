@@ -1,6 +1,6 @@
 # Building Singularity image with CellProfiler 4
 
-**Note**: At the time of writing this, the working version of CellProfiler was 4.0.7
+**Note**: At the time of writing this, the working version of CellProfiler was 4.2.1
 
 ## Build singularity image
 
@@ -8,7 +8,7 @@
 
 + Build the singularity image with
 ```
-sudo singularity build cp4.sif cp4_ubuntu16.def
+sudo singularity build cellprofiler4.sif cp4_ubuntu20.def
 ```
 
 ## Sandbox version
@@ -17,14 +17,14 @@ sudo singularity build cp4.sif cp4_ubuntu16.def
 
 + Build a sandbox version from `.def` file
 ```
-sudo singularity build --sandbox cp4 cp4_ubuntu16.def
+sudo singularity build --sandbox cellprofiler4 cp4_ubuntu20.def
 ```
 
 ### Installing required packages inside the sandbox
 
 + Enter the sandbox with
 ```
-sudo singularity shell --writable cp4
+sudo singularity shell --writable cellprofiler4
 ```
 
 + Install necessary packages into the sandbox
@@ -40,7 +40,7 @@ exit
 ### Fix sandbox to a singularity image
 
 ```
-sudo singularity build cp4.sif cp4
+sudo singularity build cellprofiler4.sif cellprofiler4
 ```
 
 ## Run CellProfiler
@@ -48,7 +48,7 @@ sudo singularity build cp4.sif cp4
 + Enter singularity container with
 
 ```
-singularity shell --writable cp4.sif
+singularity shell cellprofiler4.sif
 ```
 
 + Inside the singularity shell, check `CellProfiler` version with
@@ -77,7 +77,7 @@ singularity pull --arch amd64 libexec/cellprofiler4.sif library://pranjaldhole/c
 ```
 cat >libexec/cellprofiler.sh<<"EOF"
 #!/bin/bash
-export SINGULARITY_BINDPATH="/home/dholep/fileservers/immunx"
+export SINGULARITY_BINDPATH="$HOME/fileservers/chd"
 dir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 img="cellprofiler4.sif"
 cmd=$(basename "$0")
@@ -102,9 +102,9 @@ ln -s ../libexec/cellprofiler.sh bin/cellprofiler
     ├── cellprofiler4.sif
     └── cellprofiler.sh
 ```
-+ Run the following line in terminal or add it to your `.bashrc`. Change the path to appropriate `bin` directory.
++ Add the following line to your `.bashrc` and source the `.bashrc` file or open a new terminal. Change the path to appropriate `bin` directory.
 ```
-export PATH=$PATH:$HOME/path_to_cellprofiler_dir/bin
+export PATH=$PATH:$HOME/path_to_repo/cellprofiler/bin
 ```
 + Test the location of the app with
 ```
@@ -114,7 +114,7 @@ $ which cellprofiler
 + Now you can run `cellprofiler` from the image as if its native app. Test `CellProfiler` with
 ```
 $ cellprofiler --version
-> 4.0.7
+> 4.2.1
 ```
 or run `CellProfiler` with
 ```

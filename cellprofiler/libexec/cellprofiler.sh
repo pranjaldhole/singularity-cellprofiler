@@ -1,5 +1,5 @@
 #!/bin/bash
-export SINGULARITY_BINDPATH="/home/dholep/fileservers/immunx"
+export SINGULARITY_BINDPATH="$HOME/fileservers/chd"
 dir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 img="cellprofiler4.sif"
 cmd=$(basename "$0")
