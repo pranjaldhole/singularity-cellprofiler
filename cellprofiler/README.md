@@ -72,6 +72,7 @@ mkdir libexec bin
 ```
 singularity pull --arch amd64 libexec/cellprofiler4.sif library://pranjaldhole/cv/cellprofiler4:cellprofiler
 ```
+You can find the image on singularity hub [here](https://cloud.sylabs.io/library/pranjaldhole/cv/cellprofiler4).
 
 + Create an executable and make it executable and put it in the same folder as `.sif` file:
 ```
