@@ -70,7 +70,7 @@ mkdir libexec bin
 
 + Pull the singularity image with
 ```
-singularity pull --arch amd64 libexec/cellprofiler4.sif library://pranjaldhole/cv/cellprofiler4:cellprofiler
+singularity pull --arch amd64 libexec/cellprofiler4.sif library://pranjaldhole/cv/cellprofiler4:latest
 ```
 You can find the image on singularity hub [here](https://cloud.sylabs.io/library/pranjaldhole/cv/cellprofiler4).
 
